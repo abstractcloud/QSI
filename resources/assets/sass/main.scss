@@ -1,0 +1,60 @@
+
+.navbar-default {
+    background-color: $body-bg;
+    border-color: $body-bg;
+}
+
+.navbar {
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.navbar-right {
+    margin-right: 90px;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-brand:hover {
+    color: #F86A3A;
+}
+
+.content {
+    color: #F86A3A;
+}
+
+/* Signin Form */
+
+.signin-title {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-left: 3px #F86A3A solid;
+}
+
+.qsi-input {
+    border-radius: 0;
+    padding: 30px;
+    color: #ddd;
+    background-color: #25262B;
+    border: 0;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+    border-radius: 0;
+}
+
+.signin-btn {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
