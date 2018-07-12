@@ -49,6 +49,7 @@
     background-color: rgba(255, 255, 255, 0.2);
     padding: 15px;
     border-left: 3px #F86A3A solid;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .qsi-input {
@@ -83,4 +84,54 @@
     background-color: rgba(255, 255, 255, 0.2);
     padding: 20px;
     margin-top: 10px;
+}
+
+/* Profile */
+
+.main-profile {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.sidebar-icons{
+    width: 4%;
+    align-self: stretch;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-list{
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.content-box{
+    width: 66%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.message-input-wrap {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.message-box {
+    position: fixed;
+    left: 34%;
+    right: 150px;
+    bottom: 0;
+    height: 200px;
+}
+
+.message-btn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 104px;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0.3);
 }

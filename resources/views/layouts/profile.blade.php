@@ -8,19 +8,18 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>QSI MESSANGER</title>
+    <title>QSI MESSANGER PROFILE</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <canvas class="background"></canvas>
     <div id="app">
-        @include('layouts.partials.navigation')
         @yield('content')
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="{{ asset('js/profile.js') }}"></script>
 </body>
 </html>
