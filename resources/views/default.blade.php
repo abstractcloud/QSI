@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row content-center">
         <div class="col-md-7">
             <div class="banner-text">
-                <h1 class="big-text-header">Be happy, don't worry!</h1>
+                <h1 class="big-text-header">Be happy, dont worry!</h1>
                 <p class="content">Use QSI messanger simply</p>
                 <button class="btn btn-success">Geted Started</button>
             </div>
@@ -23,7 +23,7 @@
                         <i class="fa fa-lock"></i>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-lg btn-block signin-btn" type="submit">Sign In</button>
+                        <button class="btn btn-lg btn-block signin-btn" type="submit">Login</button>
                     </div>
                 </form>
             </div>

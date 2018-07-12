@@ -8,7 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
+window.Particles = require('particlesjs');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -22,3 +22,12 @@ const app = new Vue({
 });
 
 console.log('QSI messanger');
+
+window.onload = function() {
+    Particles.init({
+        selector: '.background',
+        color: '#000999',
+        maxParticles: 100,
+        connectParticles: true,
+    });
+}

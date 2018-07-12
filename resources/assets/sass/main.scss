@@ -1,7 +1,15 @@
 
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
 .navbar-default {
-    background-color: $body-bg;
-    border-color: $body-bg;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
 }
 
 .navbar {
@@ -28,12 +36,17 @@
 
 .content {
     color: #F86A3A;
+    font-size: 20px;
+}
+
+.content-center {
+    margin-top: 100px;
 }
 
 /* Signin Form */
 
 .signin-title {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 15px;
     border-left: 3px #F86A3A solid;
 }
@@ -41,8 +54,14 @@
 .qsi-input {
     border-radius: 0;
     padding: 30px;
-    color: #ddd;
-    background-color: #25262B;
+    color: #F86A3A;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 0;
+}
+
+.form-control:focus {
+    outline: 0;
+    box-shadow: none;
     border: 0;
 }
 
@@ -54,7 +73,14 @@
     border-radius: 0;
 }
 
+.btn {
+    border-radius: 0;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
 .signin-btn {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 20px;
+    margin-top: 10px;
 }

@@ -14,6 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <canvas class="background"></canvas>
     <div id="app">
         @include('layouts.navigation')
         @yield('content')
