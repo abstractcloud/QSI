@@ -19,7 +19,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="{{ env('APP_URL') . ':3000/socket.io/socket.io.js' }}"></script>
     <script src="{{ asset('js/profile.js') }}"></script>
 </body>
 </html>
