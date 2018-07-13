@@ -12,9 +12,9 @@
 
             <div class="content-box">
                 <div class="message-list"></div>
-                <form method="post" class="message-input-wrap">
-                    <div class="form-group">
-                        <textarea id="msg" class="message-box qsi-input form-control"></textarea>
+                <form method="post" class="">
+                    <div class="form-group message-input-wrap">
+                        <input id="msg" class="message-box qsi-input form-control" />
                         <button id="sendmsg" type="button" class="btn message-btn">SEND</button>
                     </div>
                 </form>
