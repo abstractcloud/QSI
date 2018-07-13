@@ -31837,7 +31837,18 @@ $('#sendmsg').click(function () {
 });
 
 socket.on('message', function (msg) {
-    $('.message-list').append('<p>' + msg + '</p>');
+    $('.friend').append('<div class="avatar">' + '<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">' + '<div class="status"></div>' + '</div>');
+    $('.friend').append('<div class="name">John</div>');
+    $('.friend').append('<div class="text">' + msg + '</div>');
+    $('.friend').append('<div class="time">5 min ago</div>');
+    console.log(msg);
+});
+
+socket.on('message', function (msg) {
+    $('.self').append('<div class="avatar">' + '<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">' + '<div class="status"></div>' + '</div>');
+    $('.self').append('<div class="name">Vasya</div>');
+    $('.self').append('<div class="text">' + msg + '</div>');
+    $('.self').append('<div class="time">10 min ago</div>');
     console.log(msg);
 });
 
@@ -43096,7 +43107,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
+Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -43105,9 +43116,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7168fb6a", Component.options)
+    hotAPI.createRecord("data-v-0ca92eac", Component.options)
   } else {
-    hotAPI.reload("data-v-7168fb6a", Component.options)
+    hotAPI.reload("data-v-0ca92eac", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43294,7 +43305,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
   }
 }
 

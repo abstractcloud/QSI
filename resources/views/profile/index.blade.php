@@ -10,8 +10,14 @@
 
             </div>
 
-            <div class="content-box">
-                <div class="message-list"></div>
+                <div class="content-box">
+                    <div class="message-list friend">
+
+                    </div>
+                    <div class="message-list self">
+
+                    </div>
+                </div>
                 <form method="post" class="message-input-wrap">
                     <div class="form-group">
                         <textarea id="msg" class="message-box qsi-input form-control"></textarea>
