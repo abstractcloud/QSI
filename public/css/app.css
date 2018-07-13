@@ -8466,7 +8466,25 @@ button.close {
           flex: 0 0 50px;
   background-color: rgba(161, 161, 161, 0.3);
 }
+.sidebar-icons > ul {
+  padding: 0;
+  padding-top: 5px;
+}
+.sidebar-icons li {
+  font-size: 30px;
+  text-align: center;
 
+}
+.sidebar-icons i {
+  color: #e8edec;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.6);
+  
+}
+.sidebar-icons i:hover {
+  color: #F86A3A;
+  cursor: pointer;
+}
 .sidebar-list {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 300px;

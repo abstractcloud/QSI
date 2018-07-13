@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <input class="form-control qsi-input" type="password" placeholder="Enter password" required="">
                         <i class="fa fa-lock"></i>
-                    </div>
+                    </div> 
                     <div class="text-center">
                         <button class="btn btn-lg btn-block signin-btn" type="submit">Login</button>
                     </div>

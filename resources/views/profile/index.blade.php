@@ -4,9 +4,20 @@
     <div class="main-container">
         <div class="main-profile">
             <div class="sidebar-icons">
-
+                <ul>
+                    <li><i class="fas fa-user"></i></li>
+                    <li><i class="fas fa-users"></i></li>
+                    <li><i class="fas fa-camera-retro"></i></li>
+                    <li><i class="fas fa-play"></i></li>
+                    
+                </ul>
             </div>
             <div class="sidebar-list">
+            
+                <div class="sidebar-content">
+                   
+                </div>
+               
 
             </div>
 
