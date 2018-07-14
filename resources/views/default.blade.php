@@ -13,18 +13,29 @@
         <div class="col-md-5">
             <div class="signin clearfix">
                 <h2 class="signin-title">Enter credentials to login</h2>
-                <form action="" method="post" class="clearfix">
-                    <div class="form-group">
-                        <input class="form-control qsi-input" type="text" placeholder="Enter email" required="">
+                <form action="{{ route('login') }}" method="post" class="clearfix">
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <input id="email" class="form-control qsi-input" name="email" type="email" placeholder="Enter email" value="{{ old('email') }}" required="">
                         <i class="fa fa-user"></i>
+                        @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                     </div>
-                    <div class="form-group">
-                        <input class="form-control qsi-input" type="password" placeholder="Enter password" required="">
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <input id="password" class="form-control qsi-input" name="password" type="password" placeholder="Enter password" required="">
                         <i class="fa fa-lock"></i>
-                    </div> 
+                        @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
                     <div class="text-center">
                         <button class="btn btn-lg btn-block signin-btn" type="submit">Login</button>
                     </div>
+                     {{ csrf_field() }}
                 </form>
             </div>
         </div>
