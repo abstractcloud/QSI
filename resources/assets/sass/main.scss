@@ -104,26 +104,26 @@
     flex-wrap: wrap;
 }
 
-// .sidebar-icons {
-//     flex: 0 0 50px;
-//     background-color: rgba(161, 161, 161, 0.3);
-// }
+.sidebar-icons {
+    flex: 0 0 50px;
+    background-color: rgba(161, 161, 161, 0.3);
+}
 
-// .sidebar-icons > ul {
-//     padding: 0;
-// }
+.sidebar-icons > ul {
+    padding: 0;
+}
 
-// .sidebar-icons li {
-//     font-size: 24px;
-//     text-align: center;
-//     margin-top: 10px;
-// }
+.sidebar-icons li {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+}
 
-// .sidebar-icons i {
-//     color: #e8edec;
-//     -webkit-text-stroke-width: 1px;
-//     -webkit-text-stroke-color: rgba(0, 0, 0, 0.6);
-// }
+.sidebar-icons i {
+    color: #e8edec;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.6);
+}
 
 .sidebar-icons i:hover {
     cursor: pointer;
