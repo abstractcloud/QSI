@@ -8466,25 +8466,28 @@ button.close {
           flex: 0 0 50px;
   background-color: rgba(161, 161, 161, 0.3);
 }
+
 .sidebar-icons > ul {
   padding: 0;
-  padding-top: 5px;
 }
-.sidebar-icons li {
-  font-size: 30px;
-  text-align: center;
 
+.sidebar-icons li {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
 }
+
 .sidebar-icons i {
   color: #e8edec;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.6);
-  
 }
+
 .sidebar-icons i:hover {
-  color: #F86A3A;
   cursor: pointer;
+  color: #F86A3A;
 }
+
 .sidebar-list {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 300px;
@@ -8507,6 +8510,15 @@ button.close {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+.content-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+.content-box::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .message-input-wrap {
@@ -8538,5 +8550,131 @@ button.close {
       -ms-flex: 0 0 150px;
           flex: 0 0 150px;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Content-Box */
+
+.content-box .message-list.friend {
+  padding: 0 0 0 58px;
+  text-align: left;
+  float: left;
+}
+
+.content-box .message-list {
+  position: relative;
+  max-width: 600px;
+  overflow: hidden;
+  clear: both;
+}
+
+.content-box .message-list.friend .avatar {
+  left: 0;
+}
+
+.content-box .message-list .avatar {
+  bottom: 36px;
+}
+
+.content-box .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  background: #F86A3A;
+}
+
+.content-box .avatar img {
+  display: block;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.content-box .message-list .name {
+  font-size: 16px;
+  line-height: 36px;
+  color: #F86A3A;
+  font-weight: 700;
+}
+
+.content-box .message-list.friend .avatar .status {
+  right: 4px;
+}
+
+.content-box .message-list .avatar .status {
+  bottom: 0;
+}
+
+.content-box .message-list.friend .text {
+  background: #ebebeb;
+  color: #333333;
+  border-radius: 8px 8px 8px 0;
+}
+
+.content-box .message-list .text {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  position: relative;
+}
+
+.content-box .message-list.friend .text:before {
+  left: -30px;
+  border-right-color: #ebebeb;
+  border-right-width: 12px;
+}
+
+.content-box .message-list .text:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  border: 18px solid transparent;
+  border-bottom-width: 0;
+}
+
+.content-box .message-list.friend .time {
+  padding-left: 12px;
+  color: #333333;
+}
+
+.content-box .message-list .time {
+  font-size: 16px;
+  line-height: 36px;
+  position: relative;
+  padding-bottom: 1px;
+}
+
+/*SELF*/
+
+.content-box .message-list.self {
+  padding: 0 58px 0 0;
+  text-align: right;
+  float: right;
+}
+
+.content-box .message-list.self .avatar {
+  right: 0;
+}
+
+.content-box .message-list.self .avatar .status {
+  left: 4px;
+}
+
+.content-box .message-list.self .text {
+  background: #7266ba;
+  color: #ffffff;
+  border-radius: 8px 8px 0 8px;
+}
+
+.content-box .message-list.self .text:before {
+  right: -30px;
+  border-left-color: #7266ba;
+  border-left-width: 12px;
+}
+
+.content-box .message-list.self .time {
+  padding-right: 12px;
+  color: #333333;
 }
 

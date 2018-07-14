@@ -19,7 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "express": "^4.15.2",
+        "express": "^4.16.3",
         "particlesjs": "^2.2.2",
         "socket.io": "^2.1.1",
         "socket.io-client": "^2.1.1"
