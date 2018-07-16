@@ -31832,7 +31832,8 @@ var socket = io.connect(location.origin + ':3000');
 
 $('#sendmsg').click(function () {
     socket.emit('sendmsg', {
-        message: $('#msg').val()
+        message: $('#msg').val(),
+        name: 'Alex'
     });
 });
 

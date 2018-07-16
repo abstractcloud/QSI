@@ -22,9 +22,9 @@
             </div>
 
             <div class="content-box">
-                {{--  <div class="message-list friend"></div>
+                <div class="message-list friend"></div>
 
-                <div class="message-list self"></div>  --}}
+                <div class="message-list self"></div>
                 <div class="message-list">
 
                 </div>

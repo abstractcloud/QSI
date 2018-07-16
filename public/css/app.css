@@ -8501,6 +8501,8 @@ button.close {
           flex: 0 0 calc(100% - 350px);
   background-color: #383838;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 @media (max-width: 750px) {

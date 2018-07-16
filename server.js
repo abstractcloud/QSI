@@ -1,6 +1,12 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var mongoose = require('mongoose');
+
+var configDB = require('./messanger/configs/database');
+mongoose.connect(configDB.url);
+
+var Messages = require('./messanger/models/messages');
 
 app.get('/', function(req, res){
   res.send('<h1>Hello world</h1>');
@@ -11,6 +17,21 @@ io.on('connection', function(socket){
     socket.on('sendmsg', function(request){
         console.log('message: ' + request.message);
         io.emit('message', request.message);
+        
+        var date = new Date();
+        var currentDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+        var message = new Messages({
+                name: request.name,
+                msg: request.message,
+                created_at: currentDate
+        });
+            
+        message.save(function(err, message) {
+            if (err) return console.error(err);
+            console.dir(message);
+        });
+        
     });
 
     socket.on('disconnect', function(){
