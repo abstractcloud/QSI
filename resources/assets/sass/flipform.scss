@@ -47,7 +47,7 @@
 	z-index:1;
 	opacity:0;
  
-	/* По умолчанию переворот восстановления пароля */
+	/* По умолчанию переворот регистрации */
 	-moz-transform:rotateY(180deg);
 	-webkit-transform:rotateY(180deg);
 	transform:rotateY(180deg);
@@ -70,11 +70,6 @@
  
 	opacity:0;
  
-	/**
-	 * Поворот формы авторизации, далее
-	 * класс flipped добавляется контейнеру
-	 */
- 
 	-moz-transform:rotateY(-180deg);
 	-webkit-transform:rotateY(-180deg);
 	transform:rotateY(-180deg);
@@ -83,8 +78,7 @@
 #formContainer.flipped #register{
  
 	opacity:1;
- 
-	/* Поворот формы восстановления в видимое состояние */
+
 	-moz-transform:rotateY(0deg);
 	-webkit-transform:rotateY(0deg);
 	transform:rotateY(0deg);
