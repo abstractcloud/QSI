@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./flipform.js');
 
 window.Particles = require('particlesjs');
 
