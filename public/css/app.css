@@ -8637,7 +8637,7 @@ button.close {
 
 .content-box .message-list.friend .time {
   padding-left: 12px;
-  color: #333333;
+  color: #e8edec;
 }
 
 .content-box .message-list .time {
@@ -8677,7 +8677,7 @@ button.close {
 
 .content-box .message-list.self .time {
   padding-right: 12px;
-  color: #333333;
+  color: #7266ba;
 }
 
 a.flipLink {

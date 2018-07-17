@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -31808,53 +31808,75 @@ module.exports = function spread(callback) {
 /* 34 */,
 /* 35 */,
 /* 36 */,
-/* 37 */
+/* 37 */,
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(38);
+module.exports = __webpack_require__(39);
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);
 
-window.Vue = __webpack_require__(39);
+window.Vue = __webpack_require__(40);
 
-Vue.component('example-component', __webpack_require__(42));
+Vue.component('example-component', __webpack_require__(43));
 
 var app = new Vue({
     el: '#app'
 });
 
+function personMsg(person, e) {
+    $(person).append('<div class="avatar"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"><div class="status"></div></div>');
+    $(person).append('<div class="name">' + e.name + '</div>');
+    $(person).append('<div class="text">' + e.msg + '</div>');
+    $(person).append('<div class="time">' + e.created_at + '</div>');
+}
+
 var socket = io.connect(location.origin + ':3000');
+var user = $('#msg').data('user');
+var date = new Date();
+var currentDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
 $('#sendmsg').click(function () {
     socket.emit('sendmsg', {
         message: $('#msg').val(),
-        name: 'Alex'
+        name: $('#msg').data('user')
+    });
+
+    personMsg('.self', {
+        name: user,
+        msg: $('#msg').val(),
+        created_at: currentDate
+    });
+});
+
+socket.on('history', function (hist) {
+    var person = '.friend';
+
+    hist.forEach(function (e, i) {
+
+        if (e.name === user) {
+            person = '.self';
+        }
+
+        personMsg(person, e);
     });
 });
 
 socket.on('message', function (msg) {
-    $('.friend').append('<div class="avatar">' + '<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">' + '<div class="status"></div>' + '</div>');
-    $('.friend').append('<div class="name">John</div>');
-    $('.friend').append('<div class="text">' + msg + '</div>');
-    $('.friend').append('<div class="time">5 min ago</div>');
-    console.log(msg);
-});
-
-socket.on('message', function (msg) {
-    $('.self').append('<div class="avatar">' + '<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">' + '<div class="status"></div>' + '</div>');
-    $('.self').append('<div class="name">Vasya</div>');
-    $('.self').append('<div class="text">' + msg + '</div>');
-    $('.self').append('<div class="time">10 min ago</div>');
-    console.log(msg);
+    personMsg('.friend', {
+        name: msg.name,
+        msg: msg.message,
+        created_at: currentDate
+    });
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42817,10 +42839,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(40).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(41).setImmediate))
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -42876,7 +42898,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(41);
+__webpack_require__(42);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -42890,7 +42912,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -43083,15 +43105,15 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(8)))
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(43)
+var normalizeComponent = __webpack_require__(44)
 /* script */
-var __vue_script__ = __webpack_require__(44)
+var __vue_script__ = __webpack_require__(45)
 /* template */
-var __vue_template__ = __webpack_require__(45)
+var __vue_template__ = __webpack_require__(46)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43108,7 +43130,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -43117,9 +43139,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
+    hotAPI.createRecord("data-v-7168fb6a", Component.options)
   } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
+    hotAPI.reload("data-v-7168fb6a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43130,7 +43152,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -43239,7 +43261,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43268,7 +43290,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43306,7 +43328,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
   }
 }
 
