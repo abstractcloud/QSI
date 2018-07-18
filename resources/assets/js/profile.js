@@ -56,3 +56,19 @@ socket.on('message', function(msg){
     });
 });
 
+$(function(){
+    $("#msg").keypress(function(event){
+        if(event.which == 13){
+            $('#sendmsg').click();
+            event.preventDefault();
+        }
+    });
+
+    $('#sendmsg').click(function(){
+        $("#msg").val();
+    });
+});
+
+$("#sendmsg").click(function(){
+    $('#chat').scrollTop($('#chat').prop("scrollHeight"));
+});

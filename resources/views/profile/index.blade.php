@@ -15,7 +15,7 @@
                 <div class="sidebar-content"></div>
             </div>
             <div class="content-box">
-                <div class="message-list">
+                <div id="chat" class="message-list">
                     <div class="friend"></div>  
                     <div class="self"></div>
                 </div>
