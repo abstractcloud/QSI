@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -31808,21 +31808,22 @@ module.exports = function spread(callback) {
 /* 34 */,
 /* 35 */,
 /* 36 */,
-/* 37 */
+/* 37 */,
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(38);
+module.exports = __webpack_require__(39);
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);
 
-window.Vue = __webpack_require__(39);
+window.Vue = __webpack_require__(40);
 
-Vue.component('example-component', __webpack_require__(42));
+Vue.component('example-component', __webpack_require__(43));
 
 var app = new Vue({
     el: '#app'
@@ -31832,17 +31833,29 @@ var socket = io.connect(location.origin + ':3000');
 
 $('#sendmsg').click(function () {
     socket.emit('sendmsg', {
-        message: $('#msg').val()
+        message: $('#msg').val(),
+        name: 'Alex'
     });
 });
 
 socket.on('message', function (msg) {
-    $('.message-list').append('<p>' + msg + '</p>');
+    $('.friend').append('<div class="avatar">' + '<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name">' + '<div class="status"></div>' + '</div>');
+    $('.friend').append('<div class="name">John</div>');
+    $('.friend').append('<div class="text">' + msg + '</div>');
+    $('.friend').append('<div class="time">5 min ago</div>');
+    console.log(msg);
+});
+
+socket.on('message', function (msg) {
+    $('.self').append('<div class="avatar">' + '<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name">' + '<div class="status"></div>' + '</div>');
+    $('.self').append('<div class="name">Vasya</div>');
+    $('.self').append('<div class="text">' + msg + '</div>');
+    $('.self').append('<div class="time">10 min ago</div>');
     console.log(msg);
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42805,10 +42818,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(40).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(41).setImmediate))
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -42864,7 +42877,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(41);
+__webpack_require__(42);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -42878,7 +42891,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -43071,15 +43084,15 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(8)))
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(43)
+var normalizeComponent = __webpack_require__(44)
 /* script */
-var __vue_script__ = __webpack_require__(44)
+var __vue_script__ = __webpack_require__(45)
 /* template */
-var __vue_template__ = __webpack_require__(45)
+var __vue_template__ = __webpack_require__(46)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43118,7 +43131,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -43227,7 +43240,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43256,7 +43269,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

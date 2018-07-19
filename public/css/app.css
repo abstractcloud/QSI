@@ -8467,6 +8467,27 @@ button.close {
   background-color: rgba(161, 161, 161, 0.3);
 }
 
+.sidebar-icons > ul {
+  padding: 0;
+}
+
+.sidebar-icons li {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sidebar-icons i {
+  color: #e8edec;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.6);
+}
+
+.sidebar-icons i:hover {
+  cursor: pointer;
+  color: #F86A3A;
+}
+
 .sidebar-list {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 300px;
@@ -8480,6 +8501,8 @@ button.close {
           flex: 0 0 calc(100% - 350px);
   background-color: #383838;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 @media (max-width: 750px) {
@@ -8489,6 +8512,15 @@ button.close {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+.content-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+.content-box::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .message-input-wrap {
@@ -8522,3 +8554,308 @@ button.close {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Content-Box */
+
+.content-box .message-list.friend {
+  padding: 0 0 0 58px;
+  text-align: left;
+  float: left;
+}
+
+.content-box .message-list {
+  position: relative;
+  max-width: 600px;
+  overflow: hidden;
+  clear: both;
+}
+
+.content-box .message-list.friend .avatar {
+  left: 0;
+}
+
+.content-box .message-list .avatar {
+  bottom: 36px;
+}
+
+.content-box .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  background: #F86A3A;
+}
+
+.content-box .avatar img {
+  display: block;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.content-box .message-list .name {
+  font-size: 16px;
+  line-height: 36px;
+  color: #F86A3A;
+  font-weight: 700;
+}
+
+.content-box .message-list.friend .avatar .status {
+  right: 4px;
+}
+
+.content-box .message-list .avatar .status {
+  bottom: 0;
+}
+
+.content-box .message-list.friend .text {
+  background: #ebebeb;
+  color: #333333;
+  border-radius: 8px 8px 8px 0;
+}
+
+.content-box .message-list .text {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  position: relative;
+}
+
+.content-box .message-list.friend .text:before {
+  left: -30px;
+  border-right-color: #ebebeb;
+  border-right-width: 12px;
+}
+
+.content-box .message-list .text:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  border: 18px solid transparent;
+  border-bottom-width: 0;
+}
+
+.content-box .message-list.friend .time {
+  padding-left: 12px;
+  color: #333333;
+}
+
+.content-box .message-list .time {
+  font-size: 16px;
+  line-height: 36px;
+  position: relative;
+  padding-bottom: 1px;
+}
+
+/*SELF*/
+
+.content-box .message-list.self {
+  padding: 0 58px 0 0;
+  text-align: right;
+  float: right;
+}
+
+.content-box .message-list.self .avatar {
+  right: 0;
+}
+
+.content-box .message-list.self .avatar .status {
+  left: 4px;
+}
+
+.content-box .message-list.self .text {
+  background: #7266ba;
+  color: #ffffff;
+  border-radius: 8px 8px 0 8px;
+}
+
+.content-box .message-list.self .text:before {
+  right: -30px;
+  border-left-color: #7266ba;
+  border-left-width: 12px;
+}
+
+.content-box .message-list.self .time {
+  padding-right: 12px;
+  color: #333333;
+}
+
+a.flipLink {
+  text-decoration: none;
+  color: #fff;
+}
+
+a.flipLink:hover {
+  text-decoration: none;
+  color: #F86A3A;
+}
+
+#formContainer {
+  position: relative;
+  z-index: 1;
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+
+#formContainer form {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Включение 3d пространства для переворота */
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* Когда формы переворачиваются, они скрываются */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* Включение плавного анимированного перехода */
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  /* Конфигурация анимации keyframe для Firefox */
+  -moz-animation: pulse 2s infinite;
+  /* Конфигурация для Chrome и Safari */
+  -webkit-animation: pulse 2s infinite;
+}
+
+#login {
+  z-index: 100;
+}
+
+#register {
+  z-index: 1;
+  opacity: 0;
+  /* По умолчанию переворот регистрации */
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* Firefox Keyframe Animation */
+
+/* Webkit keyframe animation */
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 1px #008aff;
+            box-shadow: 0 0 1px #008aff;
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0 10px #008aff;
+            box-shadow: 0 0 10px #008aff;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 1px #008aff;
+            box-shadow: 0 0 1px #008aff;
+  }
+}
+
+#formContainer.flipped #login {
+  opacity: 0;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+#formContainer.flipped #register {
+  opacity: 1;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+
+/*friend*/
+.friend-photo {
+  width:50px;
+  height: 50px;
+  display: inline-block;
+}
+.friend-name {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: 30px; 
+    
+}
+.friend-card {
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 2px !important;
+}
+.button-friend {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  width: 80px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 45px;
+  margin: 0 20px;
+    
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+  transition: .3s;
+}
+.button-add:hover {
+    text-decoration: none;
+  background: #2EE59D;
+  color: white;
+
+}
+.button-delete:hover {
+    text-decoration: none;
+  background: #DF0101;
+  color: white;
+}
+.search-block-form{
+   
+    margin: 10px 0 10px 8px; 
+	width:95%;
+	height:35px;
+	border-radius:15px;
+	border:none;
+	background:#2D3037;
+	box-shadow:0px 1px 2px rgba(255,255,255,0.2);
+	}
+.search-block-form input{
+	padding:0;
+	margin:0;
+	display:block;
+	border:none;
+	outline:none;
+	background:none;
+	width:100%;
+	height:100%;
+	}
+.search-block-form i{
+	font-size: 20px;
+    margin: 7px 0 0 10px;
+    color: #e8edec;
+	}
+.search-block-form .form-actions input:hover{
+	cursor:pointer;
+	}
+.search-block-form .form-actions input{
+	overflow:hidden;
+	text-indent:-9999px;
+	}
+.search-block-form .form-item{
+	width:237px;
+	padding:0px;
+	float:right;
+	height:28px;
+	}
+.search-block-form .form-item input{
+	font:20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#e8edec;
+	height:auto !important;
+	padding:6px 0;
+	}
+.placeholder{color:#e8edec !important;}

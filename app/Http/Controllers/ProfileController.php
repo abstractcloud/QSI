@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Friends;
 
 class ProfileController extends Controller
 {
@@ -13,7 +14,7 @@ class ProfileController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -21,8 +22,17 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('profile.index');
+    public function index(Request $request)
+    { 
+        $search = $request->all();
+        if(!empty($search)){
+            $name=$search['name'];
+            $friends = Friends::searchFriendName($name);
+        } else {
+            $friends = Friends::all();
+        }
+        return view('profile.index',[
+            'friends' => $friends,
+        ]);
     }
 }
