@@ -8514,10 +8514,6 @@ button.close {
   }
 }
 
-.content-box::-webkit-scrollbar {
-  width: 10px;
-}
-
 .content-box::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.9);
@@ -8628,7 +8624,6 @@ button.close {
 }
 
 .message-list .text {
-  width: 600px;
   padding: 12px;
   font-size: 16px;
   font-weight: 500;

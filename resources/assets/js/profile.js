@@ -65,7 +65,8 @@ $(function(){
     });
 
     $('#sendmsg').click(function(){
-        $("#msg").val();
+       var userMasseges = $("#msg").val();
+       $("#msg").val('');
     });
 });
 
