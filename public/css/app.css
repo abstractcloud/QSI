@@ -8556,28 +8556,43 @@ button.close {
 
 /* Content-Box */
 
-.content-box .message-list.friend {
+.message-list {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% - 350px);
+          flex: 0 0 calc(100% - 350px);
+  height: 92%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.message-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.message-list .friend {
   padding: 0 0 0 58px;
   text-align: left;
   float: left;
 }
 
-.content-box .message-list {
-  position: relative;
-  max-width: 600px;
-  overflow: hidden;
-  clear: both;
+.message-list .friend .avatar {
+  left: 22px;
 }
 
-.content-box .message-list.friend .avatar {
-  left: 0;
+/*.friend .avatar {
+    bottom: 36px;
 }
+.self .avatar {
+    bottom: 36px;
+}*/
 
-.content-box .message-list .avatar {
-  bottom: 36px;
-}
-
-.content-box .avatar {
+.avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -8585,34 +8600,35 @@ button.close {
   background: #F86A3A;
 }
 
-.content-box .avatar img {
+.avatar img {
   display: block;
   border-radius: 20px;
   height: 100%;
 }
 
-.content-box .message-list .name {
+.message-list .name {
   font-size: 16px;
   line-height: 36px;
   color: #F86A3A;
   font-weight: 700;
 }
 
-.content-box .message-list.friend .avatar .status {
+.message-list .friend .avatar .status {
   right: 4px;
 }
 
-.content-box .message-list .avatar .status {
+.message-list .avatar .status {
   bottom: 0;
 }
 
-.content-box .message-list.friend .text {
+.message-list .friend .text {
   background: #ebebeb;
   color: #333333;
   border-radius: 8px 8px 8px 0;
 }
 
-.content-box .message-list .text {
+.message-list .text {
+  width: 600px;
   padding: 12px;
   font-size: 16px;
   font-weight: 500;
@@ -8620,13 +8636,13 @@ button.close {
   position: relative;
 }
 
-.content-box .message-list.friend .text:before {
+.message-list .friend .text:before {
   left: -30px;
   border-right-color: #ebebeb;
   border-right-width: 12px;
 }
 
-.content-box .message-list .text:before {
+.message-list .text:before {
   content: '';
   display: block;
   position: absolute;
@@ -8635,12 +8651,12 @@ button.close {
   border-bottom-width: 0;
 }
 
-.content-box .message-list.friend .time {
+.message-list .friend .time {
   padding-left: 12px;
-  color: #333333;
+  color: #e8edec;
 }
 
-.content-box .message-list .time {
+.message-list .time {
   font-size: 16px;
   line-height: 36px;
   position: relative;
@@ -8649,35 +8665,35 @@ button.close {
 
 /*SELF*/
 
-.content-box .message-list.self {
+.message-list .self {
   padding: 0 58px 0 0;
   text-align: right;
   float: right;
 }
 
-.content-box .message-list.self .avatar {
-  right: 0;
+.message-list .self .avatar {
+  right: 22px;
 }
 
-.content-box .message-list.self .avatar .status {
+.message-list .self .avatar .status {
   left: 4px;
 }
 
-.content-box .message-list.self .text {
+.message-list .self .text {
   background: #7266ba;
   color: #ffffff;
   border-radius: 8px 8px 0 8px;
 }
 
-.content-box .message-list.self .text:before {
+.message-list .self .text:before {
   right: -30px;
   border-left-color: #7266ba;
   border-left-width: 12px;
 }
 
-.content-box .message-list.self .time {
+.message-list .self .time {
   padding-right: 12px;
-  color: #333333;
+  color: #7266ba;
 }
 
 a.flipLink {
@@ -8688,6 +8704,117 @@ a.flipLink {
 a.flipLink:hover {
   text-decoration: none;
   color: #F86A3A;
+}
+
+/*friend*/
+
+.friend-photo {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.friend-name {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: 30px;
+}
+
+.friend-card {
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 2px !important;
+}
+
+.button-friend {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  width: 80px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 45px;
+  margin: 0 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: white;
+  -webkit-box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.button-add:hover {
+  text-decoration: none;
+  background: #2EE59D;
+  color: white;
+}
+
+.button-delete:hover {
+  text-decoration: none;
+  background: #DF0101;
+  color: white;
+}
+
+.search-block-form {
+  margin: 10px 0 10px 8px;
+  width: 95%;
+  height: 35px;
+  border-radius: 15px;
+  border: none;
+  background: #2D3037;
+  -webkit-box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.2);
+          box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.search-block-form input {
+  padding: 0;
+  margin: 0;
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+}
+
+.search-block-form i {
+  font-size: 20px;
+  margin: 7px 0 0 10px;
+  color: #e8edec;
+}
+
+.search-block-form .form-actions input:hover {
+  cursor: pointer;
+}
+
+.search-block-form .form-actions input {
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.search-block-form .form-item {
+  width: 237px;
+  padding: 0px;
+  float: right;
+  height: 28px;
+}
+
+.search-block-form .form-item input {
+  font: 20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #e8edec;
+  height: auto !important;
+  padding: 6px 0;
+}
+
+.placeholder {
+  color: #e8edec !important;
 }
 
 #formContainer {
@@ -8763,99 +8890,3 @@ a.flipLink:hover {
   transform: rotateY(0deg);
 }
 
-
-/*friend*/
-.friend-photo {
-  width:50px;
-  height: 50px;
-  display: inline-block;
-}
-.friend-name {
-  display: inline-block;
-  text-transform: uppercase;
-  margin: 0;
-  padding-left: 30px; 
-    
-}
-.friend-card {
-  max-width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin-bottom: 2px !important;
-}
-.button-friend {
-  text-decoration: none;
-  outline: none;
-  display: inline-block;
-  width: 80px;
-  height: 25px;
-  line-height: 25px;
-  border-radius: 45px;
-  margin: 0 20px;
-    
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 3px;
-  font-weight: 600;
-  color: #524f4e;
-  background: white;
-  box-shadow: 0 8px 15px rgba(0,0,0,.1);
-  transition: .3s;
-}
-.button-add:hover {
-    text-decoration: none;
-  background: #2EE59D;
-  color: white;
-
-}
-.button-delete:hover {
-    text-decoration: none;
-  background: #DF0101;
-  color: white;
-}
-.search-block-form{
-   
-    margin: 10px 0 10px 8px; 
-	width:95%;
-	height:35px;
-	border-radius:15px;
-	border:none;
-	background:#2D3037;
-	box-shadow:0px 1px 2px rgba(255,255,255,0.2);
-	}
-.search-block-form input{
-	padding:0;
-	margin:0;
-	display:block;
-	border:none;
-	outline:none;
-	background:none;
-	width:100%;
-	height:100%;
-	}
-.search-block-form i{
-	font-size: 20px;
-    margin: 7px 0 0 10px;
-    color: #e8edec;
-	}
-.search-block-form .form-actions input:hover{
-	cursor:pointer;
-	}
-.search-block-form .form-actions input{
-	overflow:hidden;
-	text-indent:-9999px;
-	}
-.search-block-form .form-item{
-	width:237px;
-	padding:0px;
-	float:right;
-	height:28px;
-	}
-.search-block-form .form-item input{
-	font:20px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	color:#e8edec;
-	height:auto !important;
-	padding:6px 0;
-	}
-.placeholder{color:#e8edec !important;}

@@ -9,14 +9,18 @@ mongoose.connect(configDB.url);
 var Messages = require('./messanger/models/messages');
 
 app.get('/', function(req, res){
-  res.send('<h1>Hello world</h1>');
+  res.send('');
 });
 
 io.on('connection', function(socket){
     console.log('a user connected');
+    Messages.find({}, function (err, msg) {
+        io.emit('history', msg);
+    });
+
     socket.on('sendmsg', function(request){
         console.log('message: ' + request.message);
-        io.emit('message', request.message);
+        socket.broadcast.emit('message', request.message);
         
         var date = new Date();
         var currentDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();

@@ -31866,7 +31866,7 @@ $(function () {
 	formContainer.find('form').submit(function (e) {
 		// Preventing form submissions. If you implement
 		// a backend, you will want to remove this code
-		e.preventDefault();
+		// e.preventDefault();
 	});
 
 	// A helper function that checks for the
