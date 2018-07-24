@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -31804,26 +31804,56 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 33 */,
+/* 33 */
+/***/ (function(module, exports) {
+
+console.log('QSI messanger');
+
+$(document).ready(function () {
+  var errors = $('span.help-block');
+  $("[data-toggle='modal']").click(function () {
+    if (errors.length > 0) {
+      $(errors).remove();
+    }
+  });
+
+  if (errors.length > 0) {
+    $(errors[0]).parents('div.modal').modal();
+  }
+
+  $('#deletePhoto').on('show.bs.modal', function (event) {
+    var id = $(event.relatedTarget).data('id');
+    $(this).find('#delete-photo-submit').data('id', id);
+  });
+
+  $('#delete-photo-submit').click(function () {
+    var id = $(this).data('id');
+    $("form[data-id='" + id + "']").submit();
+  });
+});
+
+/***/ }),
 /* 34 */,
 /* 35 */,
 /* 36 */,
 /* 37 */,
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(39);
-
-
-/***/ }),
+/* 38 */,
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(40);
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
 __webpack_require__(9);
+__webpack_require__(33);
 
-window.Vue = __webpack_require__(40);
+window.Vue = __webpack_require__(41);
 
-Vue.component('example-component', __webpack_require__(43));
+Vue.component('example-component', __webpack_require__(44));
 
 var app = new Vue({
     el: '#app'
@@ -31894,7 +31924,7 @@ $("#sendmsg").click(function () {
 });
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42857,10 +42887,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(41).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(42).setImmediate))
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -42916,7 +42946,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(42);
+__webpack_require__(43);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -42930,7 +42960,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -43123,15 +43153,15 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(8)))
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(44)
+var normalizeComponent = __webpack_require__(45)
 /* script */
-var __vue_script__ = __webpack_require__(45)
+var __vue_script__ = __webpack_require__(46)
 /* template */
-var __vue_template__ = __webpack_require__(46)
+var __vue_template__ = __webpack_require__(47)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43170,7 +43200,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -43279,7 +43309,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43308,7 +43338,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

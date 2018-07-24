@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 33);
+/******/ 	return __webpack_require__(__webpack_require__.s = 34);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -31805,14 +31805,43 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 33 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(34);
-module.exports = __webpack_require__(37);
+console.log('QSI messanger');
 
+$(document).ready(function () {
+  var errors = $('span.help-block');
+  $("[data-toggle='modal']").click(function () {
+    if (errors.length > 0) {
+      $(errors).remove();
+    }
+  });
+
+  if (errors.length > 0) {
+    $(errors[0]).parents('div.modal').modal();
+  }
+
+  $('#deletePhoto').on('show.bs.modal', function (event) {
+    var id = $(event.relatedTarget).data('id');
+    $(this).find('#delete-photo-submit').data('id', id);
+  });
+
+  $('#delete-photo-submit').click(function () {
+    var id = $(this).data('id');
+    $("form[data-id='" + id + "']").submit();
+  });
+});
 
 /***/ }),
 /* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(35);
+module.exports = __webpack_require__(38);
+
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -31823,9 +31852,10 @@ module.exports = __webpack_require__(37);
  */
 
 __webpack_require__(9);
-__webpack_require__(35);
+__webpack_require__(36);
+__webpack_require__(33);
 
-window.Particles = __webpack_require__(36);
+window.Particles = __webpack_require__(37);
 
 console.log('QSI messanger');
 
@@ -31839,7 +31869,7 @@ window.onload = function () {
 };
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports) {
 
 $(function () {
@@ -31886,7 +31916,7 @@ $(function () {
 });
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -31901,7 +31931,7 @@ var Particles=function(t,e){"use strict";var n,i={};function o(t,e){return t.x<e
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):"undefined"!=typeof module&&module.exports?module.exports=Particles:window.Particles=Particles}();
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
