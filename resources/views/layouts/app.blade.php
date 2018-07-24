@@ -11,8 +11,6 @@
     <title>QSI MESSANGER</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('vendor/components/font-awesome/css/fontawesome-all.min.css') }}">
-    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
