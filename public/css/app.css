@@ -8812,6 +8812,11 @@ a.flipLink:hover {
   color: #e8edec !important;
 }
 
+.btn-action__wrapp {
+  display: inline-block;
+  margin-left: 100px;
+}
+
 #formContainer {
   position: relative;
   z-index: 1;

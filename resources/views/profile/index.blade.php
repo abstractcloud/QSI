@@ -3,39 +3,38 @@
 @section('content')
     <div class="main-container">
         <div class="main-profile">
-            <div class="sidebar-icons">
-                <ul>
-                    <li><i class="fas fa-user"></i></li>
-                    <li><i class="fas fa-users"></i></li>
-                    <li><a href="{{url('profile/gallery')}}"><i class="fas fa-camera-retro"></i></a></li>
-                    <li><i class="fas fa-play"></i></li>
-                </ul>
-            </div>
+            @include('profile.partials.icons')
             <div class="sidebar-list">
 
                 <div class="sidebar-content">
                     <!--friends-->
                     <div class="friends">
-                        <form method="get" class="search-block-form">
-                            {{ csrf_field() }}
+                        <form method="GET" class="search-block-form">
                             <i class="fas fa-search"></i>
                             <div class="form-item">
                                 <input type="text" name="name" maxlength="128" placeholder="Search...">
                             </div>
                             <div class="form-actions">
-                                <input type="submit" name="op" value="Поиск" class="form-submit">
+                                <input type="submit" value="Поиск" class="form-submit">
                             </div>
                         </form>
                      
                         <div class="friends-content">
                             @foreach($friends as $f)
                             <div class="card text-white mb-3 friend-card">
-                               <div class="card-header">  <img src="img/1.png" class="rounded-circle friend-photo">
-                                    <h4 class="card-title friend-name ">{{ $f->name }}</h4></div>
+                               <div class="card-header">  
+                                   <img src="img/1.png" class="rounded-circle friend-photo">
+                                    <h4 class="card-title friend-name">
+                                        {{ $f->name }}
+                                    </h4>
+                                    <div class="btn-action__wrapp">
+                                        <a href="#" class="friend-name"> <i class="fas fa-plus"></i> </a>
+                                    </div>
+                                </div>
                                 <div class="card-body">
                                    
-                                    <a class="button-friend button-add" href="#" role="button">WRITE</a>
-                                    <a class="button-friend button-delete" href="#" role="button">DELETE</a>
+                                    {{-- <a class="button-friend button-add" href="#" role="button">WRITE</a>
+                                    <a class="button-friend button-delete" href="#" role="button">DELETE</a> --}}
     
                                 </div>
                             </div>

@@ -3,14 +3,7 @@
 @section('content')
     <div class="main-container">
         <div class="main-profile">
-            <div class="sidebar-icons">
-                <ul>
-                    <li><i class="fas fa-user"></i></li>
-                    <li><i class="fas fa-users"></i></li>
-                    <li><a href=""><i class="fas fa-camera-retro"></i></a></li>
-                    <li><i class="fas fa-play"></i></li>
-                </ul>
-            </div>
+            @include('profile.partials.icons')
             <div class="sidebar-list">
                 <div class="sidebar-content">
                     <h3 class="text-center">Gallery</h3>

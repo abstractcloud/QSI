@@ -24,13 +24,14 @@ class ProfileController extends Controller
      */
     public function index(Request $request)
     { 
-        $search = $request->all();
-        if(!empty($search)){
-            $name=$search['name'];
+        $name = $request->input('name');
+
+        if(!empty($name)){
             $friends = Friends::searchFriendName($name);
-        } else {
+        }else{
             $friends = Friends::all();
         }
+
         return view('profile.index',[
             'friends' => $friends,
         ]);

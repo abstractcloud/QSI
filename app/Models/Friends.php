@@ -17,9 +17,11 @@ class Friends extends Model
     
     public static function searchFriendName($name)
     {
-          $searchFriend = DB::table('friends')
-            ->where('name', 'LIKE', '%'.$name.'%')
+          $searchFriend = DB::table('users')
+            ->leftJoin('friends', 'friends.friend_id', '=', 'users.id')
+            ->where('users.name', 'LIKE', '%'.$name.'%')
             ->get();
+            
         return $searchFriend;
     }
 }
