@@ -16,3 +16,10 @@ Route::get('/', 'DefaultController@index')->name('default');
 Auth::routes();
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
+Route::post('/profile/gallery','GalleryController@store');
+Route::patch('/profile/gallery/{id}','GalleryController@update');
+Route::resource('/profile/gallery','GalleryController');
+Route::get('/profile/gallery/photos','PhotoController@index');
+Route::post('/profile/gallery/photos','PhotoController@store');
+Route::post('/profile/gallery/photos','PhotoController@store');
+Route::resource('profile/gallery/photos','PhotoController');

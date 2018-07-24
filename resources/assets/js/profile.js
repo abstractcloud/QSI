@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./gallery.js');
 
 window.Vue = require('vue');
 
