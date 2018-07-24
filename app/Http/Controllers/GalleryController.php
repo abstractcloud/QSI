@@ -18,9 +18,12 @@ class GalleryController extends Controller
     public function index()
     {
         $user_id=Auth::id();
-        $id=DB::table('galleries')->where('user_id',$user_id)->first()->id;
-        return redirect()->route('gallery.show',[
-            'gallery_id'=>$id]);
+        
+        //$id=DB::table('galleries')->where('user_id',$user_id)->first()->id;
+        //return redirect()->route('gallery.show',[
+            //'gallery_id'=>$id]);
+        return view ('profile.gallery');
+       
     }
 
     /**

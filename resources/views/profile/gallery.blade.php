@@ -20,25 +20,28 @@
                     <i data-toggle="modal" data-target="#modalFolderCreate" class="fas fa-plus"></i>
                     <p>Add folder</p>
                     </div>
-                    
+                    @if (!empty($galleries))
                     @foreach ($galleries as $g)
                     <div class="folder-box">
                         <a class="folder" href="{{route ('gallery.show',$g->id )}}"><i class="far fa-images"></i></a>
                         <p>{{$g->name}}</p>
                     </div>
                     @endforeach
-                    
+                    @endif
                     </div>
                 </div>
             </div>
+
             <div class="content-box">
+                 @if(!empty($gallery))
               <h2 class="text-center">{{$gallery->name}} <i  title="Edit folder" data-toggle="modal" data-target="#editFolder" class="far fa-edit"></i><i data-toggle="modal" data-target="#deleteFolder" title="Delete folder" class="far fa-trash-alt"></i></h2>
-         
+                 @endif
                <div class="gallery-photos-box">
                <div class="add-element photo-box">
                 <i data-toggle="modal" data-target="#modalPhotoAdd" class="fas fa-plus"></i>
                 <p>Add new photo</p>
               </div>
+              @if(!empty($photos))
               @foreach ($photos as $photo)
               <div class="photo-box">
                <div class="delete-box">
@@ -52,12 +55,13 @@
                 <p>{{$photo->title}}</p>
               </div>
               @endforeach
+              @endif
                
               </div>
             </div>
         </div>
     </div>
-            
+      @if(!empty($gallery))      
     <!-- Modal add new photo -->
     <div id="modalPhotoAdd" class="modal fade">
         <div class="modal-dialog">
@@ -97,7 +101,7 @@
         </div>
     </div>
     <!-- Modal End -->
-    
+    @endif
 <!-- Modal create new Folder -->
     <div id="modalFolderCreate" class="modal fade">
         <div class="modal-dialog">
@@ -127,7 +131,7 @@
         </div>
     </div>
     <!--Modal create new Folder End -->
-     
+     @if (!empty($gallery))
     <!-- Modal Edit Folder-->
     <div id="editFolder" class="modal fade">
         <div class="modal-dialog">
@@ -208,6 +212,6 @@
         </div>
     </div>
     <!-- Modal Delete Folder End -->
-  
+  @endif
    
 @endsection
