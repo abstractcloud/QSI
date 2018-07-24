@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Gallery;
 use File;
+use Image;
 
 class PhotoController extends Controller
 {
@@ -39,21 +40,33 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        $photo=$request->all();
+        $photo = $request->all();
+        
         $request->validate([
-        'title' => 'required|max:255',
-        'img'=> 'required|mimes:jpeg'
+            'title' => 'required|max:255',
+            'img'=> 'required|mimes:jpeg'
         ]);
+
         if(!empty($photo['img'])){
-            $file=$request->file('img');
-            $hash=md5(microtime());
-            $fileName=$hash.$file->getClientOriginalName();
+            $file = $request->file('img');
+            $hash = md5(microtime());
+            $fileName = $hash.$file->getClientOriginalName();
             $file->move('uploads/photos/img',$fileName);
-            $photo['img']=$fileName;
+            
+            $img = Image::make('uploads/photos/img/' . $fileName);
+            $img->resize(null, 200, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            
+            $img->save('uploads/photos/preview/' . $fileName);
+            
+            $photo['img'] = $fileName;
         }
+
         Photo::create($photo);
+
         return redirect()->route('gallery.show',[
-            'id'=>$photo['gallery_id']
+            'id' => $photo['gallery_id']
         ]);
     }
 
