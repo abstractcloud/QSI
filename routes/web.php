@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'DefaultController@index')->name('default');
-
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
