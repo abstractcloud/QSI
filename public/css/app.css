@@ -9063,3 +9063,63 @@ div.photo-box img.photo {
   max-width: 1000px;
 }
 
+/* AVATAR AND NAME */
+
+.img-responsive {
+  padding: 20px 0 0 0;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.table-info {
+  padding: 15px;
+}
+
+.username {
+  text-align: center;
+}
+
+.table-info h3 {
+  margin-top: 5px;
+}
+
+.tab-panel .form-control {
+  background: rgba(37, 37, 37, 0.61);
+  width: 50%;
+}
+
+.tab-panel .form-group {
+  margin-top: 10px;
+}
+
+.bttn {
+  outline: none;
+  color: #fff;
+  padding: 0.6em 1em;
+  font-size: 1em;
+  -webkit-appearance: none;
+  background: #FF5722;
+  border: 2px solid #FF5722;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  width: 50%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.self-info {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 52px;
+}
+
+.self-info li {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+input[value] {
+  color: #FF5722;
+}
+
