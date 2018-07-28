@@ -9065,7 +9065,7 @@ div.photo-box img.photo {
 
 /* AVATAR AND NAME */
 
-.img-responsive {
+.photo {
   padding: 20px 0 0 0;
   display: block;
   max-width: 100%;
