@@ -26,7 +26,7 @@ $('#sendmsg').click(function () {
         message: $('#msg').val(),
         name: $('#msg').data('user')
     });
-
+    console.log($('#msg').val(), 'self send');
     personMsg('.self', {
         name: user,
         msg: $('#msg').val(),
@@ -37,11 +37,13 @@ $('#sendmsg').click(function () {
 
 socket.on('history', function (hist) {
     var person = '.friend';
-
+    
     hist.forEach(function (e, i) {
-        
+        console.log(e.msg, 'history send');
         if(e.name === user) {
             person = '.self';
+        }else{
+            person = '.friend';
         }
 
         personMsg(person, e);
@@ -50,6 +52,7 @@ socket.on('history', function (hist) {
 });
 
 socket.on('message', function(msg){
+    console.log(msg, 'broadcast send');
     personMsg('.friend', {
         name: msg.name,
         msg: msg.message,

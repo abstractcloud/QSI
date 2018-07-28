@@ -20,7 +20,7 @@ io.on('connection', function(socket){
 
     socket.on('sendmsg', function(request){
         console.log('message: ' + request.message);
-        socket.broadcast.emit('message', request.message);
+        socket.broadcast.emit('message', request);
         
         var date = new Date();
         var currentDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();

@@ -31876,7 +31876,7 @@ $('#sendmsg').click(function () {
         message: $('#msg').val(),
         name: $('#msg').data('user')
     });
-
+    console.log($('#msg').val(), 'self send');
     personMsg('.self', {
         name: user,
         msg: $('#msg').val(),
@@ -31888,9 +31888,11 @@ socket.on('history', function (hist) {
     var person = '.friend';
 
     hist.forEach(function (e, i) {
-
+        console.log(e.msg, 'history send');
         if (e.name === user) {
             person = '.self';
+        } else {
+            person = '.friend';
         }
 
         personMsg(person, e);
@@ -31898,6 +31900,7 @@ socket.on('history', function (hist) {
 });
 
 socket.on('message', function (msg) {
+    console.log(msg, 'broadcast send');
     personMsg('.friend', {
         name: msg.name,
         msg: msg.message,
@@ -43178,7 +43181,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -43187,9 +43190,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
+    hotAPI.createRecord("data-v-7168fb6a", Component.options)
   } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
+    hotAPI.reload("data-v-7168fb6a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -43376,7 +43379,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
   }
 }
 
