@@ -13,8 +13,9 @@
 
 Route::get('/', 'DefaultController@index')->name('default');
 
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
 Auth::routes();
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 

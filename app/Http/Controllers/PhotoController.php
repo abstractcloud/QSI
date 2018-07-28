@@ -7,6 +7,7 @@ use App\Models\Photo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Gallery;
+use Illuminate\Support\Facades\Storage;
 use File;
 use Image;
 
@@ -52,9 +53,8 @@ class PhotoController extends Controller
             $hash = md5(microtime());
             $fileName = $hash.$file->getClientOriginalName();
             $file->move('uploads/photos/img',$fileName);
-            
             $img = Image::make('uploads/photos/img/' . $fileName);
-            $img->resize(null, 200, function ($constraint) {
+            $img->resize(null, 300, function ($constraint) {
                 $constraint->aspectRatio();
             });
             

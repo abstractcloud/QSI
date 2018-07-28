@@ -3,7 +3,7 @@ div.gallery-sidebar-box, div.gallery-photos-box {
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
  :focus {
     outline: 0;
@@ -22,11 +22,11 @@ div.folder-box i{
 }
 div.folder-box a.folder+p {
     font-size: 16px;
-    max-width: 80px;
+    
 }
 div.folder-box {
      padding: 10px;
-    min-width: 80px;
+    width: 98px;
     text-align: center; 
 }
 .sidebar-content h3 {
@@ -90,6 +90,7 @@ div.gallery-photos-box {
   max-width:100%;
   margin: 0 auto;
   height:auto; 
+    justify-content: space-around;
 }
 
 div.content-box {
