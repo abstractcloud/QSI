@@ -1,5 +1,5 @@
 require('./bootstrap');
-require('./gallery.js');
+
 
 window.Vue = require('vue');
 
@@ -10,10 +10,13 @@ const app = new Vue({
 });
 
 function personMsg (person, e) {
+    $('#chat').append('<div class="' + person + ' message-box"></div>');
+    person=$('#chat div.'+person).last()
     $(person).append('<div class="avatar"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"><div class="status"></div></div>');
     $(person).append('<div class="name">' + e.name + '</div>');
     $(person).append('<div class="text">' + e.msg + '</div>');
     $(person).append('<div class="time">'+ e.created_at +'</div>');
+    $('#chat').append('<div style="clear:both;"></div> ')
 }
 
 var socket = io.connect(location.origin + ':3000');
@@ -27,7 +30,8 @@ $('#sendmsg').click(function () {
         name: $('#msg').data('user')
     });
     console.log($('#msg').val(), 'self send');
-    personMsg('.self', {
+    
+    personMsg( 'self' , {
         name: user,
         msg: $('#msg').val(),
         created_at: currentDate
@@ -41,9 +45,9 @@ socket.on('history', function (hist) {
     hist.forEach(function (e, i) {
         console.log(e.msg, 'history send');
         if(e.name === user) {
-            person = '.self';
+            person = 'self';
         }else{
-            person = '.friend';
+            person = 'friend';
         }
 
         personMsg(person, e);
@@ -53,7 +57,7 @@ socket.on('history', function (hist) {
 
 socket.on('message', function(msg){
     console.log(msg, 'broadcast send');
-    personMsg('.friend', {
+    personMsg('friend', {
         name: msg.name,
         msg: msg.message,
         created_at: currentDate
