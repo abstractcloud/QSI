@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 34);
+/******/ 	return __webpack_require__(__webpack_require__.s = 33);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -31805,43 +31805,14 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 33 */
-/***/ (function(module, exports) {
-
-console.log('QSI messanger');
-
-$(document).ready(function () {
-  var errors = $('span.help-block');
-  $("[data-toggle='modal']").click(function () {
-    if (errors.length > 0) {
-      $(errors).remove();
-    }
-  });
-
-  if (errors.length > 0) {
-    $(errors[0]).parents('div.modal').modal();
-  }
-
-  $('#deletePhoto').on('show.bs.modal', function (event) {
-    var id = $(event.relatedTarget).data('id');
-    $(this).find('#delete-photo-submit').data('id', id);
-  });
-
-  $('#delete-photo-submit').click(function () {
-    var id = $(this).data('id');
-    $("form[data-id='" + id + "']").submit();
-  });
-});
-
-/***/ }),
-/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(35);
+__webpack_require__(34);
 module.exports = __webpack_require__(38);
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -31852,8 +31823,8 @@ module.exports = __webpack_require__(38);
  */
 
 __webpack_require__(9);
+__webpack_require__(35);
 __webpack_require__(36);
-__webpack_require__(33);
 
 window.Particles = __webpack_require__(37);
 
@@ -31869,7 +31840,7 @@ window.onload = function () {
 };
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports) {
 
 $(function () {
@@ -31913,6 +31884,35 @@ $(function () {
 
 		return false;
 	}
+});
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+console.log('QSI messanger');
+
+$(document).ready(function () {
+  var errors = $('span.help-block');
+  $("[data-toggle='modal']").click(function () {
+    if (errors.length > 0) {
+      $(errors).remove();
+    }
+  });
+
+  if (errors.length > 0) {
+    $(errors[0]).parents('div.modal').modal();
+  }
+
+  $('#deletePhoto').on('show.bs.modal', function (event) {
+    var id = $(event.relatedTarget).data('id');
+    $(this).find('#delete-photo-submit').data('id', id);
+  });
+
+  $('#delete-photo-submit').click(function () {
+    var id = $(this).data('id');
+    $("form[data-id='" + id + "']").submit();
+  });
 });
 
 /***/ }),

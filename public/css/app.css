@@ -8575,6 +8575,8 @@ button.close {
   padding: 0 0 0 58px;
   text-align: left;
   float: left;
+  max-width: 80%;
+  height: auto;
 }
 
 .message-list .friend .avatar {
@@ -8664,6 +8666,8 @@ button.close {
   padding: 0 58px 0 0;
   text-align: right;
   float: right;
+  max-width: 80%;
+  height: auto;
 }
 
 .message-list .self .avatar {

@@ -31804,35 +31804,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-console.log('QSI messanger');
-
-$(document).ready(function () {
-  var errors = $('span.help-block');
-  $("[data-toggle='modal']").click(function () {
-    if (errors.length > 0) {
-      $(errors).remove();
-    }
-  });
-
-  if (errors.length > 0) {
-    $(errors[0]).parents('div.modal').modal();
-  }
-
-  $('#deletePhoto').on('show.bs.modal', function (event) {
-    var id = $(event.relatedTarget).data('id');
-    $(this).find('#delete-photo-submit').data('id', id);
-  });
-
-  $('#delete-photo-submit').click(function () {
-    var id = $(this).data('id');
-    $("form[data-id='" + id + "']").submit();
-  });
-});
-
-/***/ }),
+/* 33 */,
 /* 34 */,
 /* 35 */,
 /* 36 */,
@@ -31849,7 +31821,6 @@ module.exports = __webpack_require__(40);
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);
-__webpack_require__(33);
 
 window.Vue = __webpack_require__(41);
 
@@ -31860,10 +31831,13 @@ var app = new Vue({
 });
 
 function personMsg(person, e) {
+    $('#chat').append('<div class="' + person + ' message-box"></div>');
+    person = $('#chat div.' + person).last();
     $(person).append('<div class="avatar"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name"><div class="status"></div></div>');
     $(person).append('<div class="name">' + e.name + '</div>');
     $(person).append('<div class="text">' + e.msg + '</div>');
     $(person).append('<div class="time">' + e.created_at + '</div>');
+    $('#chat').append('<div style="clear:both;"></div> ');
 }
 
 var socket = io.connect(location.origin + ':3000');
@@ -31877,7 +31851,8 @@ $('#sendmsg').click(function () {
         name: $('#msg').data('user')
     });
     console.log($('#msg').val(), 'self send');
-    personMsg('.self', {
+
+    personMsg('self', {
         name: user,
         msg: $('#msg').val(),
         created_at: currentDate
@@ -31890,9 +31865,9 @@ socket.on('history', function (hist) {
     hist.forEach(function (e, i) {
         console.log(e.msg, 'history send');
         if (e.name === user) {
-            person = '.self';
+            person = 'self';
         } else {
-            person = '.friend';
+            person = 'friend';
         }
 
         personMsg(person, e);
@@ -31901,7 +31876,7 @@ socket.on('history', function (hist) {
 
 socket.on('message', function (msg) {
     console.log(msg, 'broadcast send');
-    personMsg('.friend', {
+    personMsg('friend', {
         name: msg.name,
         msg: msg.message,
         created_at: currentDate
